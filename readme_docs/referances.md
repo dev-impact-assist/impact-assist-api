@@ -6,7 +6,4 @@ I will list web referances used to build this project here once i have compiled 
 
 basic setup and deployment referances
 
-- [dockerized fastAPI](https://www.youtube.com/watch?v=CzAyaSolZjY)
-- [gcp hosting the FastAPI](https://www.youtube.com/watch?v=bcYmfHOrOPM)
-
 ## Scrapeing
