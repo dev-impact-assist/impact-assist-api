@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from os import environ as env
+from src.driver_connect import driver_connect
 
 app = FastAPI()
 
@@ -9,4 +10,13 @@ def index():
 
 @app.get('/test')
 def test_page():
-    return {"content":"This is the test end point"}
+    thing = 'test'
+    url = "https://iatse15.unionimpact.com/login"
+    def test_scrape():
+        driver = driver_connect()
+        driver.get(url)
+        driver.close()
+    test_scrape()    
+        
+
+    return {"content":thing}
