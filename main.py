@@ -1,6 +1,8 @@
 from fastapi import FastAPI
 from os import environ as env
-from src.driver_connect import driver_connect
+from src.helper_functions.driver_connect import driver_connect
+
+from selenium.webdriver.common.by import By
 
 app = FastAPI()
 
@@ -8,15 +10,21 @@ app = FastAPI()
 def index():
     return {"details":f"Hello,My special number is = {env['SPECIAL_NUM']}"}
 
+my_pass= env['MY_PASS']
 @app.get('/test')
 def test_page():
     thing = 'test'
     url = "https://iatse15.unionimpact.com/login"
     def test_scrape():
-        driver = driver_connect()
+        driver = driver_connect(True)
         driver.get(url)
+        page_data = driver.page_source.encode("utf-8")
+        print(page_data)
         driver.close()
-    test_scrape()    
+        return page_data
+    # test_scrape()    
         
 
-    return {"content":thing}
+    return {"content":test_scrape()}
+
+

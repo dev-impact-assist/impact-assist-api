@@ -11,6 +11,10 @@ with Only Local Storage of user information.
 
 It will communicate with a Flutter Front end.
 
+### Development Deployment
+
+### Production Deployment
+
 ## Badges
 
 To Come
@@ -27,7 +31,7 @@ To come
 - set up virtual env
 - install requirements.txt
 
-- run `python uvicorn main:app`
+- run `python -m uvicorn main:app`
 
 ## Usage
 
